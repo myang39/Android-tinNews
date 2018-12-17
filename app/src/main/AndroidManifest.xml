@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.laioffer.tinnews">
+    <!--加了permission才能进行network 访问-->
+    <!--android 四种component要定义在 manifest:-->
+    <!--activity, service, receiver, provider-->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
