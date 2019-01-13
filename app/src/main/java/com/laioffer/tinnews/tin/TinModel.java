@@ -1,6 +1,7 @@
 package com.laioffer.tinnews.tin;
 
 import android.annotation.SuppressLint;
+import android.database.sqlite.SQLiteConstraintException;
 import android.util.Log;
 
 import com.laioffer.tinnews.TinApplication;
@@ -50,8 +51,11 @@ public class TinModel implements TinContract.Model {
     public void saveFavoriteNews(News news) {
         Disposable disposable = Completable.fromAction(() -> db.newsDao().insertNews(news)).
                 subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(() ->{
-
+                presenter.onSavedSuccess();
         }, error -> {
+                    if (error instanceof SQLiteConstraintException) {
+                        presenter.onError();
+                    }
         });
     }
 

@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.save.SavedNewsFragment;
@@ -21,7 +20,7 @@ public class ContainerFragment extends TinBasicFragment {
     public static final String PROFILE_PAGE_TAG = "profile_page";
     private int pageIndex;
     //end here
-    //add initiFragment field
+    //add initFragment field
     private Fragment initFragment;
 
     public static ContainerFragment newInstance(int pageIndex) {
