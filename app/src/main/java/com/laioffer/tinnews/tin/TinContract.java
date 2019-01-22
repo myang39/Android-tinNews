@@ -24,7 +24,7 @@ public interface TinContract {
 
     interface Model extends MvpContract.Model<Presenter> {
         //add fetchData here
-        void fetchData();
+        void fetchData(String country);
         void saveFavoriteNews(News news);
     }
 }

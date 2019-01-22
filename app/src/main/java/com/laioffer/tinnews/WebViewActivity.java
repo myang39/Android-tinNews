@@ -56,16 +56,14 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
             }
         });
 
-        //Bundle bundle = getIntent().getExtras();
-//        if (bundle != null) {
-//            Bundle innerBundle = bundle.getBundle(BUNDLE);
-//            if (innerBundle != null) {
-//                url = innerBundle.getString(URL);
-//                webView.loadUrl(url);
-//            }
-//        }
-        url = "https://www.google.com";
-        webView.loadUrl(url);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            Bundle innerBundle = bundle.getBundle(BUNDLE);
+            if (innerBundle != null) {
+                url = innerBundle.getString(URL);
+                webView.loadUrl(url);
+            }
+        }
 
         findViewById(R.id.more).setOnClickListener(new View.OnClickListener() {
             @Override
